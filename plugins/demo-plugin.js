@@ -1,4 +1,4 @@
-const ReplaceServersURL = require('../decorators/replace-servers-url');
+const ReplaceServersURL = require('./decorators/replace-servers-url');
 const id = 'demo';
 
 /** @type {import('@redocly/cli').CustomRulesConfig} */
