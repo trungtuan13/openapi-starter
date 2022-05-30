@@ -10,6 +10,10 @@ apis:
 lint:
   extends:
     - recommended
+  plugins:
+    - './plugins/demo-plugin.js'
+  decorators:
+    demo/replace-servers-url: error
   rules:
     no-unused-components: error
 features.openapi:
