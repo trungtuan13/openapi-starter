@@ -15,7 +15,7 @@ lint:
   decorators:
     demo/replace-servers-url: error
   rules:
-    no-unused-components: warning
+    no-unused-components: error
 features.openapi:
   showConsole: true
   htmlTemplate: ./docs/index.html
