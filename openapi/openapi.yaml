@@ -5,15 +5,15 @@ info:
   description: REST API for API Gateway Service
   termsOfService: http://strongtie.com
   contact:
-    name: Steven McCarthy
+    name: Alex Marinov
     url: https://www.strongtie.com/
-    email: SMcCarthy@strongtie.com
+    email: AMarinov@strongtie.com
   license:
     name: Use under LICX
     url: https://www.strongtie.com/
-  version: v1.82
+  version: 1.2.2
 servers:
-  - url: https://api.strongtie.com/gws
+  - url: https://api-staging.strongtie.com/gws
 paths:
   /api/APIInformation:
     post:
@@ -23,6 +23,9 @@ paths:
       responses:
         '200':
           description: Success
+      security:
+        - Oauth2:
+            - read
   /api/HurricaneTies:
     post:
       tags:
@@ -49,6 +52,9 @@ paths:
       responses:
         '200':
           description: Success
+      security:
+        - Oauth2:
+            - read
   /api/JoistSelector/GetJoistManufacturerProducts:
     post:
       tags:
@@ -56,7 +62,7 @@ paths:
       summary: Returns a list of i-jost manufacturers and their respective products
       requestBody:
         content:
-          application/json-patchson:
+          application/json-patch+json:
             schema:
               $ref: '#/components/schemas/JoistRequestModel'
             example: {"manufacturer":"Boise Cascade","product":"","series":""}
@@ -1732,6 +1738,6 @@ components:
       type: oauth2
       flows:
         clientCredentials:
-          tokenUrl: https://api.strongtie.com/gws/authorization/oauth/token
+          tokenUrl: https://api-staging.strongtie.com/gws/authorization/oauth/token
           scopes:
             read: read data

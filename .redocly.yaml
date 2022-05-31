@@ -11,7 +11,7 @@ lint:
   extends:
     - recommended
   plugins:
-    - 'https://raw.githubusercontent.com/trungtuan13/public-testing-repo/main/plugins/demo-plugins.js'
+    - 'plugins/demo-plugin.js'
   decorators:
     demo/replace-servers-url: error
   rules:

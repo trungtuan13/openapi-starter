@@ -4,13 +4,13 @@ info:
   description: REST API for API Gateway Service
   termsOfService: http://strongtie.com
   contact:
-    name: Steven McCarthy
+    name: Alex Marinov
     url: https://www.strongtie.com/
-    email: SMcCarthy@strongtie.com
+    email: AMarinov@strongtie.com
   license:
     name: Use under LICX
     url: https://www.strongtie.com/
-  version: v1.82
+  version: 1.2.2
 servers:
   - url: https://titus-testing.com
 paths:
@@ -22,7 +22,9 @@ paths:
       responses:
         '200':
           description: Success
-      security: []
+      security:
+        - Oauth2:
+            - read
   /api/HurricaneTies:
     post:
       tags:
@@ -163,7 +165,9 @@ paths:
       responses:
         '200':
           description: Success
-      security: []
+      security:
+        - Oauth2:
+            - read
   /api/JoistSelector/GetJoistManufacturerProducts:
     post:
       tags:
@@ -171,7 +175,7 @@ paths:
       summary: Returns a list of i-jost manufacturers and their respective products
       requestBody:
         content:
-          application/json-patchson:
+          application/json-patch+json:
             schema:
               $ref: '#/components/schemas/JoistRequestModel'
             example:
@@ -208,7 +212,9 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/SSTHgrManufacturerProduct'
-      security: []
+      security:
+        - Oauth2:
+            - read
   /api/Hangers:
     post:
       tags:
@@ -751,7 +757,9 @@ paths:
       responses:
         '200':
           description: Success
-      security: []
+      security:
+        - Oauth2:
+            - read
   /api/Hangers/GetMultiple:
     post:
       tags:
@@ -1282,7 +1290,9 @@ paths:
       responses:
         '200':
           description: Success
-      security: []
+      security:
+        - Oauth2:
+            - read
   /api/Hangers/GetAllMetalHangers:
     post:
       tags:
@@ -1313,7 +1323,9 @@ paths:
       responses:
         '200':
           description: Success
-      security: []
+      security:
+        - Oauth2:
+            - read
   /api/LoadCombination/CalculateNetLoad:
     post:
       tags:
@@ -1440,7 +1452,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SSTNetLoadOut'
-      security: []
+      security:
+        - Oauth2:
+            - read
   /api/Multiply:
     post:
       tags:
@@ -1585,7 +1599,9 @@ paths:
       responses:
         '200':
           description: Success
-      security: []
+      security:
+        - Oauth2:
+            - read
   /api/Multiply/GetMultiplyFastenerIds:
     post:
       tags:
@@ -1596,7 +1612,9 @@ paths:
       responses:
         '200':
           description: Success
-      security: []
+      security:
+        - Oauth2:
+            - read
   /api/TrussHangers:
     post:
       tags:
@@ -2032,7 +2050,9 @@ paths:
       responses:
         '200':
           description: Success
-      security: []
+      security:
+        - Oauth2:
+            - read
   /api/TrussHangers/GetMultiple:
     post:
       tags:
@@ -2611,7 +2631,9 @@ paths:
       responses:
         '200':
           description: Success
-      security: []
+      security:
+        - Oauth2:
+            - read
 components:
   schemas:
     AllMetalHangersRequest:
@@ -4154,6 +4176,6 @@ components:
       type: oauth2
       flows:
         clientCredentials:
-          tokenUrl: https://api.strongtie.com/gws/authorization/oauth/token
+          tokenUrl: https://api-staging.strongtie.com/gws/authorization/oauth/token
           scopes:
             read: read data
