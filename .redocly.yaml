@@ -1,9 +1,11 @@
 # See https://redocly.com/docs/cli/configuration/ for more information.
 apis:
+  sample@online:
+    root: https://petstore3.swagger.io/api/v3/openapi.json
   sample@internal:
-    root: openapi/openapi.yaml
+    root: openapi/hs-openapi.yaml
   sample@external:
-    root: openapi/openapi.yaml
+    root: openapi/hs-openapi.yaml
     lint:
       decorators:
         remove-x-internal: on
@@ -14,6 +16,7 @@ lint:
     - 'plugins/demo-plugin.js'
   decorators:
     demo/replace-servers-url: error
+#    demo/remove-all-authentications: error
   rules:
     no-unused-components: warning
 features.openapi:

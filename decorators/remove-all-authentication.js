@@ -7,7 +7,6 @@ function RemoveAllAuthentication() {
     PathItem: {
         leave(PathItem) {
         PathItem.post.security = [];
-        console.log('PathItem: ', PathItem)
         }
     }
   }
