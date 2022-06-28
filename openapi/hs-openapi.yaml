@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: Simpson Strongtie API Gateway Service
+  title: Simpson Strongtie API Gateway Service Rebuild
   description: REST API for API Gateway Service
   termsOfService: http://strongtie.com
   contact:
